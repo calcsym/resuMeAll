@@ -1,0 +1,76 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": "73930385"
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "17806751"
+    },
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": "98443197"
+    },
+    {
+      "id": "ee21",
+      "cityName": "Irvine-Lake Forest",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2024-11-15T17:58:42.336Z",
+      "notes": "Morning 2 Hands\n",
+      "position": {
+        "lat": "33.687781758439364",
+        "lng": "-117.77618408203126"
+      }
+    },
+    {
+      "id": "0166",
+      "cityName": "San Bernardino",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2024-11-12T20:54:57.000Z",
+      "notes": "dfsafds",
+      "position": {
+        "lat": "34.13454168193739",
+        "lng": "-117.36694335937501"
+      }
+    },
+    {
+      "id": "0415",
+      "cityName": "Los Angeles",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2024-11-18T19:49:41.794Z",
+      "notes": "Try hard",
+      "position": {
+        "lat": "33.78827853625996",
+        "lng": "-118.22387695312501"
+      }
+    }
+  ]
+}
