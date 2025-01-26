@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { FcAddDatabase } from 'react-icons/fc';
 import {
   AiOutlineHome,
   AiOutlineIdcard,
@@ -11,7 +12,7 @@ import {
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.3rem;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -19,10 +20,10 @@ const StyledNavLink = styled(NavLink)`
   &:visited {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
 
     color: var(--color-grey-600);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     padding: 1.2rem 2.4rem;
     transition: all 0.3s;
@@ -57,36 +58,36 @@ function MainNav() {
   return (
     <nav>
       <NavList>
-        <li>
+        <>
           <StyledNavLink to="/dashboard">
             <AiOutlineHome />
             <span>Home</span>
           </StyledNavLink>
-        </li>
-        <li>
+        </>
+        <>
           <StyledNavLink to="/pricing">
-            <AiOutlineIdcard />
+            <FcAddDatabase />
             <span>Profiles</span>
           </StyledNavLink>
-        </li>
-        <li>
+        </>
+        <>
           <StyledNavLink to="/product">
             <AiFillPushpin />
             <span>Location</span>
           </StyledNavLink>
-        </li>
-        <li>
+        </>
+        <>
           <StyledNavLink to="/users">
             <AiOutlineUser />
             <span>Users</span>
           </StyledNavLink>
-        </li>
-        <li>
+        </>
+        <>
           <StyledNavLink to="/settings">
             <AiFillSetting />
             <span>Settings</span>
           </StyledNavLink>
-        </li>
+        </>
       </NavList>
     </nav>
   );

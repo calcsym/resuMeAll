@@ -4,14 +4,14 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { lazy, Suspense } from 'react';
-import { CitiesProvider } from './context/CitiesContext-1';
+import { CitiesProvider } from './context/CitiesContext';
 import { AuthProvider } from './context/FakeAuthContext';
 import ProtectedRoute from './pages/ProtectedRoute';
 
 import CityList from './components/CityList';
 import CountryList from './components/CountryList';
 import City from './components/City';
-import Form from './components/Form';
+import MapForm from './components/MapForm';
 import SpinnerFullPage from './components/SpinnerFullPage';
 
 const queryClient = new QueryClient({
@@ -27,7 +27,7 @@ const queryClient = new QueryClient({
 // import Pricing from "./pages/Pricing";
 // import Homepage from "./pages/Homepage";
 // import Login from "./pages/Login";
-// import AppLayout from "./pages/AppLayout";
+// import MapAppLayout from "./pages/MapAppLayout";
 // import PageNotFound from "./pages/PageNotFound";
 
 const Homepage = lazy(() => import('./pages/Homepage'));
@@ -69,7 +69,7 @@ function App() {
                   <Route path="cities" element={<CityList />} />
                   <Route path="cities/:id" element={<City />} />
                   <Route path="countries" element={<CountryList />} />
-                  <Route path="form" element={<Form />} />
+                  <Route path="mapform" element={<MapForm />} />
                 </Route>
                 <Route path="*" element={<PageNotFound />} />
               </Routes>

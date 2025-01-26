@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useCities } from '../context/CitiesContext-1';
+import { useCities } from '../context/CitiesContext';
 
 import BackButton from '../ui/BackButton';
 import styles from './City.module.css';

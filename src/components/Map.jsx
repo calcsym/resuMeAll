@@ -9,7 +9,7 @@ import {
   useMap,
   useMapEvents
 } from 'react-leaflet';
-import { useCities } from '../context/CitiesContext-1';
+import { useCities } from '../context/CitiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
 import { useUrlPosition } from '../hooks/useUrlPosition';
 import Button from '../ui/Button';
@@ -85,7 +85,7 @@ function DetectClick() {
   const navigate = useNavigate();
 
   useMapEvents({
-    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
+    click: (e) => navigate(`mapform?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
   });
 }
 

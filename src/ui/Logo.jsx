@@ -1,16 +1,7 @@
 import styles from './Logo.module.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useDarkMode } from '../context/DarkModeContext';
-
-const StyledLogo = styled.div`
-  text-align: center;
-`;
-
-const Img = styled.img`
-  height: 9.6rem;
-  width: auto;
-`;
+//import { useDarkMode } from '../context/DarkModeContext';
 
 function Logo() {
   return (
@@ -20,6 +11,15 @@ function Logo() {
   );
 }
 /*
+const StyledLogo = styled.div`
+  text-align: center;
+`;
+
+const Img = styled.img`
+  height: 9.6rem;
+  width: auto;
+`;
+
 function Logo() {
   const { isDarkMode } = useDarkMode();
 
