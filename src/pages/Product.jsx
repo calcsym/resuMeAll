@@ -1,4 +1,3 @@
-import styles from './Product.module.css';
 import PageNav from '../components/PageNav';
 import styled from 'styled-components';
 import ProfileTable from '../features/profiles/ProfileTable';
@@ -9,15 +8,36 @@ import ProfileTableOperations from '../features/profiles/ProfileTableOperations'
 //import { getProfiles } from '../services/apiProfiles';
 //import { useEffect } from 'react';
 
-const Img = styled.img`
+const StyledImg = styled.img`
   width: auto;
+`;
+
+const StyledProduct = styled.div`
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(36, 42, 46, 0.8),
+      rgba(36, 42, 46, 0.8)
+    ),
+    url('../bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2.5rem 5rem;
+`;
+
+const StyledProductSection = styled.section`
+  width: clamp(80rem, 100%, 90rem);
+  margin: 6rem auto;
+  display: flex;
+  gap: 7rem;
+  align-items: center;
 `;
 
 export default function Product() {
   return (
-    <main className={styles.product}>
+    <StyledProduct>
       <PageNav />
-      <section>
+
+      <StyledProductSection>
         <div>
           <Row type="horizontal">
             <Heading as="h1">All Profiles</Heading>
@@ -29,8 +49,8 @@ export default function Product() {
             <AddProfile />
           </Row>
         </div>
-      </section>
-    </main>
+      </StyledProductSection>
+    </StyledProduct>
   );
 }
 //
@@ -64,3 +84,6 @@ import { useEffect } from 'react';
           alt="person with dog overlooking mountain with sunset"
         />
 */
+
+/*
+ */

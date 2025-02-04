@@ -53,6 +53,7 @@ function SearchPosts() {
     />
   );
 }
+
 function Results() {
   const { posts } = usePosts();
   const { searchQuery, setSearchQuery } = useState('');

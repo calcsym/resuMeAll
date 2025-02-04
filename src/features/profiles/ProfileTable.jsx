@@ -57,3 +57,15 @@ function ProfileTable() {
 }
 
 export default ProfileTable;
+
+/*
+const {
+isLoading, 
+data: cabins,
+error,
+} = useQuery({
+ queryKey: ["cabins"],
+ queryFn: getCabins,
+});
+
+*/

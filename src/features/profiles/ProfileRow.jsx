@@ -127,3 +127,26 @@ function ProfileRow({ profile }) {
 }
 
 export default ProfileRow;
+
+/*
+const {
+id: cabinId, 
+name, 
+maxCapacity, regularPrice, discount, image, }=cabin;
+
+const {isLoading: isDeleting, mutate} =useMutation({
+mutationFn: deleteCabin,
+onSuccess:()=>{
+  alert("Cabin successfully deleted");
+
+  queryClient.invalidateQueries({
+  queryKey:["cabins"],});},
+  onError:(err)=> alert(err.message);
+
+});
+
+<button onClick={()=>mutate(cabinId)} disabled={isDeleting}>Delete</button>
+
+//(id)=> deleteCabin(id),
+
+*/

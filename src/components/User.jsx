@@ -1,6 +1,41 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './User.module.css';
+import styled from 'styled-components';
 import { useAuth } from '../context/FakeAuthContext';
+
+const StyledUser = styled.div`
+  position: absolute;
+  top: 4.2rem;
+  right: 4.2rem;
+  background-color: var(--color-dark--1);
+  padding: 1rem 1.4rem;
+  border-radius: 7px;
+  z-index: 999;
+  box-shadow: 0 0.8rem 2.4rem rgba(36, 42, 46, 0.5);
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+`;
+
+const StyledImg = styled.img`
+  border-radius: 100px;
+  height: 4rem;
+`;
+
+const StyledButton = styled.button`
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+`;
 
 function User() {
   const { user, logout } = useAuth();
@@ -12,11 +47,11 @@ function User() {
   }
 
   return (
-    <div className={styles.user}>
-      <img src={user.avatar} alt={user.name} />
+    <StyledUser>
+      <StyledImg src={user.avatar} alt={user.name} />
       <span>Welcome, {user.name}</span>
-      <button onClick={handleClick}>Logout</button>
-    </div>
+      <StyledButton onClick={handleClick}>Logout</StyledButton>
+    </StyledUser>
   );
 }
 

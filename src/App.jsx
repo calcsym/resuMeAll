@@ -13,6 +13,8 @@ import CountryList from './components/CountryList';
 import City from './components/City';
 import MapForm from './components/MapForm';
 import SpinnerFullPage from './components/SpinnerFullPage';
+import { Toaster } from 'react-hot-toast';
+import { DarkModeProvider } from './context/DarkModeContext';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,41 +45,64 @@ function App() {
   //const [notes, setNotes] = useState("");
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
+    <DarkModeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
 
-      <AuthProvider>
-        <CitiesProvider>
-          <BrowserRouter>
-            <Suspense fallback={<SpinnerFullPage />}>
-              <Routes>
-                <Route index element={<Navigate replace to="homepage" />} />
-                <Route path="homepage" element={<Homepage />} />
-                <Route path="product" element={<Product />} />
-                <Route path="pricing" element={<Pricing />} />
-                <Route path="dashboard" element={<DashBoard />} />
-                <Route path="login" element={<Login />} />
-                <Route
-                  path="app"
-                  element={
-                    <ProtectedRoute>
-                      <AppLayout />
-                    </ProtectedRoute>
-                  }
-                >
-                  <Route index element={<Navigate replace to="cities" />} />
-                  <Route path="cities" element={<CityList />} />
-                  <Route path="cities/:id" element={<City />} />
-                  <Route path="countries" element={<CountryList />} />
-                  <Route path="mapform" element={<MapForm />} />
-                </Route>
-                <Route path="*" element={<PageNotFound />} />
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
-        </CitiesProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+        <AuthProvider>
+          <CitiesProvider>
+            <BrowserRouter>
+              <Suspense fallback={<SpinnerFullPage />}>
+                <Routes>
+                  <Route index element={<Navigate replace to="homepage" />} />
+                  <Route path="homepage" element={<Homepage />} />
+                  <Route path="product" element={<Product />} />
+                  <Route path="pricing" element={<Pricing />} />
+                  <Route path="dashboard" element={<DashBoard />} />
+                  <Route path="login" element={<Login />} />
+                  <Route
+                    path="app"
+                    element={
+                      <ProtectedRoute>
+                        <AppLayout />
+                      </ProtectedRoute>
+                    }
+                  >
+                    <Route index element={<Navigate replace to="cities" />} />
+                    <Route path="cities" element={<CityList />} />
+                    <Route path="cities/:id" element={<City />} />
+                    <Route path="countries" element={<CountryList />} />
+                    <Route path="mapform" element={<MapForm />} />
+                  </Route>
+                  <Route path="*" element={<PageNotFound />} />
+                </Routes>
+              </Suspense>
+            </BrowserRouter>
+
+            <Toaster
+              position="top-center"
+              gutter={12}
+              containerStyle={{ margin: '8px' }}
+              toastOptions={{
+                success: {
+                  duration: 3000
+                },
+                error: {
+                  duration: 5000
+                },
+                style: {
+                  fontSize: '16px',
+                  maxWidth: '500px',
+                  padding: '16px 24px',
+                  backgroundColor: 'var(--color-grey-0)',
+                  color: 'var(--color-grey-700)'
+                }
+              }}
+            />
+          </CitiesProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </DarkModeProvider>
   );
 }
 

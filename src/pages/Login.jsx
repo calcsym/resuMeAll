@@ -1,9 +1,46 @@
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import PageNav from '../components/PageNav';
-import styles from './Login.module.css';
-import Button from '../ui/Button';
 import { useAuth } from '../context/FakeAuthContext';
 import { useNavigate } from 'react-router-dom';
+
+const StyledButton = styled.button`
+  background-color: green;
+  border-radius: 7px;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+`;
+
+const StyledLogin = styled.div`
+  padding: 2.5rem 5rem;
+  background-color: var(--color-dark--1);
+  min-height: 100vh;
+`;
+
+const StyledForm = styled.form`
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  /* Different from other form */
+  width: 48rem;
+  margin: 8rem auto;
+`;
+
+const StyledRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
 
 export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
@@ -27,11 +64,11 @@ export default function Login() {
   );
 
   return (
-    <main className={styles.login}>
+    <StyledLogin>
       <PageNav />
 
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.row}>
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledRow>
           <label htmlFor="email">Email address</label>
           <input
             type="email"
@@ -39,9 +76,9 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-        </div>
+        </StyledRow>
 
-        <div className={styles.row}>
+        <StyledRow>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -49,12 +86,10 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-        </div>
+        </StyledRow>
 
-        <div>
-          <Button type="primary">Login</Button>
-        </div>
-      </form>
-    </main>
+        <StyledButton>Login</StyledButton>
+      </StyledForm>
+    </StyledLogin>
   );
 }

@@ -1,6 +1,6 @@
-import Button from "../../ui/Button";
-import CreateProfileForm from "./CreateProfileForm";
-import Modal from "../../ui/Modal";
+import Button from '../../ui/Button';
+import CreateProfileForm from './CreateProfileForm';
+import Modal from '../../ui/Modal';
 
 function AddProfile() {
   return (
